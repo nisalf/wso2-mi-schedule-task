@@ -342,15 +342,5 @@
   </profiles>    
   <properties>
     <projectType>integration-project</projectType>
-    <uuid>f1166d96-7497-4010-a0bd-283bcda62042</uuid>
-    <!-- <archiveLocation>configure a custom target directory for CAPP</archiveLocation> -->
-    <keystore.type>JKS</keystore.type>
-    <keystore.name>wso2carbon.jks</keystore.name>
-    <keystore.password>wso2carbon</keystore.password>
-    <keystore.alias>wso2carbon</keystore.alias>
-    <ciphertool.enable>true</ciphertool.enable>
-    <dockerfile.base.image>wso2/wso2mi:4.3.0</dockerfile.base.image>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 </project>
