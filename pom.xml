@@ -181,7 +181,7 @@
     <projectType>integration-project</projectType>
     <project>
         <runtime>
-            <version>4.3.0</version>
+            <version>4.2.0.29</version>
         </runtime>
     </project>
   </properties>
