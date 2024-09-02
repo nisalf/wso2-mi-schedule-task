@@ -3,10 +3,10 @@
         <file.init>
   <connectionType>FTP</connectionType>
   <name>SFTP_CONNECTION</name>
-  <host>n1coprops.myftp.org</host>
+  <host>SYSTEM:URL</host>
   <port>21</port>
-  <username>Chris</username>
-  <password>Nicoprops187</password>
+  <username>SYSTEM:USER</username>
+  <password>SYSTEM:PASS</password>
   <fileLockScheme>Local</fileLockScheme>
   <isPassive>true</isPassive>
   <userDirIsRoot>true</userDirIsRoot>
