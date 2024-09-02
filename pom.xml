@@ -172,6 +172,10 @@
         </plugins>
       </build>
     </profile>
+    <profile>
+      <id>docker</id>
+      <build/>
+    </profile>
   </profiles>    
   <properties>
     <projectType>integration-project</projectType>
