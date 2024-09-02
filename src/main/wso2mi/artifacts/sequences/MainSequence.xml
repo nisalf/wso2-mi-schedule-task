@@ -1,4 +1,4 @@
-<mainSequence xmlns="http://ws.apache.org/ns/synapse" name="MainSequence">
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="MainSequence">
     <file.checkExist configKey="SFTP_CONNECTION">
 				<path>/SOURCE/BSS-PRODUCTS.csv.OK</path>
 				<includeResultTo>Message Property</includeResultTo>
@@ -35,4 +35,4 @@
 					</log>
 				</else>
 			</filter>
-</mainSequence>
+</sequence>
