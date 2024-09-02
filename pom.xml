@@ -179,6 +179,10 @@
   </profiles>    
   <properties>
     <projectType>integration-project</projectType>
-    <project><runtime><version>4.3.0</version></runtime></project>
+    <project>
+        <runtime>
+            <version>4.3.0</version>
+        </runtime>
+    </project>
   </properties>
 </project>
