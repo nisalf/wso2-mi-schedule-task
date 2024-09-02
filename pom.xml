@@ -179,5 +179,6 @@
   </profiles>    
   <properties>
     <projectType>integration-project</projectType>
+    <project.runtime.version>4.2.0.15</project.runtime.version>
   </properties>
 </project>
