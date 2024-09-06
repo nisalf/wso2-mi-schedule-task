@@ -3,7 +3,7 @@
         <file.init>
   <connectionType>FTP</connectionType>
   <name>SFTP_CONNECTION</name>
-  <host>$SYSTEM:URL</host>
+  <host>{$SYSTEM:URL}</host>
   <port>21</port>
   <username>$SYSTEM:USER</username>
   <password>$SYSTEM:PASS</password>
