@@ -6,7 +6,7 @@
 				<resultPropertyName>fileExists</resultPropertyName>
 			</file.checkExist>
 			<log level="custom">
-                        <property name="sftpurl1 " expression="get-property('sftpurl1')"/>
+                        <property name="sftpurl12 " expression="get-property('sftpurl12')"/>
 					</log>
 					<log level="custom">
                         <property name="sftpurl12 " value="$SYSTEM:URL"/>
