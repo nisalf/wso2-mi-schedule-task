@@ -1,4 +1,7 @@
 <sequence xmlns="http://ws.apache.org/ns/synapse" name="MainSequence">
+<log level="custom">
+                        <property name="sftpurl12 " value="Test 1"/>
+					</log>
 <property expression="get-property('env', 'URL')" name="sftpurl12" scope="default" type="STRING"/>
     <file.checkExist configKey="SFTP_CONNECTION">
 				<path>/SOURCE/BSS-PRODUCTS.csv.OK</path>
@@ -7,9 +10,6 @@
 			</file.checkExist>
 			<log level="custom">
                         <property name="sftpurl12 " expression="get-property('sftpurl12')"/>
-					</log>
-					<log level="custom">
-                        <property name="sftpurl12 " value="$SYSTEM:URL"/>
 					</log>
 			<log level="custom">
                         <property name="does file exist? " expression="get-property('fileExists')"/>
