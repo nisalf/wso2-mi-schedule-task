@@ -5,8 +5,8 @@
   <name>SFTP_CONNECTION</name>
   <host>{$ctx:URL}</host>
   <port>21</port>
-  <username>test</username>
-  <password>test1</password>
+  <username>{$ctx:USER}</username>
+  <password>{$ctx:PASS}</password>
   <fileLockScheme>Local</fileLockScheme>
   <isPassive>true</isPassive>
   <userDirIsRoot>true</userDirIsRoot>

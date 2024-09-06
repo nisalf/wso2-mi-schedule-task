@@ -2,9 +2,11 @@
 	<log level="custom">
 		<property name="Hello  " value="Test 1"/>
 	</log>
-	<property expression="get-property('env', 'URL')" name="sftpurl12" scope="default" type="STRING"/>
+	<property expression="get-property('env', 'URL')" name="URL" scope="default" type="STRING"/>
+	<property expression="get-property('env', 'USER')" name="USER" scope="default" type="STRING"/>
+	<property expression="get-property('env', 'PASS')" name="PASS" scope="default" type="STRING"/>
 	<log level="custom">
-		<property name="sftpurl12 " expression="get-property('sftpurl12')"/>
+		<property name="sftpurl12 " expression="get-property('URL')"/>
 	</log>
 	<file.checkExist configKey="SFTP_CONNECTION">
 		<path>/SOURCE/BSS-PRODUCTS.csv.OK</path>
