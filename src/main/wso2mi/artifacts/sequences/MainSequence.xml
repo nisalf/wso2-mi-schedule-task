@@ -1,45 +1,45 @@
 <sequence xmlns="http://ws.apache.org/ns/synapse" name="MainSequence">
-<log level="custom">
-                        <property name="sftpurl12 " value="Test 1"/>
-					</log>
-<property expression="get-property('env', 'URL')" name="sftpurl12" scope="default" type="STRING"/>
-    <file.checkExist configKey="SFTP_CONNECTION">
-				<path>/SOURCE/BSS-PRODUCTS.csv.OK</path>
-				<includeResultTo>Message Property</includeResultTo>
-				<resultPropertyName>fileExists</resultPropertyName>
-			</file.checkExist>
+	<log level="custom">
+		<property name="Hello  " value="Test 1"/>
+	</log>
+	<property expression="get-property('env', 'URL')" name="sftpurl12" scope="default" type="STRING"/>
+	<log level="custom">
+		<property name="sftpurl12 " expression="get-property('sftpurl12')"/>
+	</log>
+	<file.checkExist configKey="SFTP_CONNECTION">
+		<path>/SOURCE/BSS-PRODUCTS.csv.OK</path>
+		<includeResultTo>Message Property</includeResultTo>
+		<resultPropertyName>fileExists</resultPropertyName>
+	</file.checkExist>
+	<log level="custom">
+		<property name="does file exist? " expression="get-property('fileExists')"/>
+	</log>
+	<filter source="get-property('fileExists')" regex="true">
+		<then>
+			<file.read configKey="SFTP_CONNECTION">
+				<path>/SOURCE/BSS-PRODUCTS.csv</path>
+				<contentType>text/plain</contentType>
+				<includeResultTo>true</includeResultTo>
+				<resultPropertyName>csvContent</resultPropertyName>
+				<readMode>Complete File</readMode>
+				<startLineNum>0</startLineNum>
+				<endLineNum>0</endLineNum>
+				<lineNum>0</lineNum>
+				<encoding>UTF-8</encoding>
+				<enableStreaming>false</enableStreaming>
+				<enableLock>false</enableLock>
+			</file.read>
+			<property name="newFileName" expression="fn:concat('/Target/bssproducts', get-property('SYSTEM_DATE', 'ddMMyyyy'), '.csv')" scope="default" type="STRING"/>
+			<file.write configKey="SFTP_CONNECTION">
+				<filePath>{get-property('newFileName')}</filePath>
+				<contentOrExpression>{get-property('csvContent')}</contentOrExpression>
+				<writeMode>OVERWRITE</writeMode>
+			</file.write>
+		</then>
+		<else>
 			<log level="custom">
-                        <property name="sftpurl12 " expression="get-property('sftpurl12')"/>
-					</log>
-			<log level="custom">
-                        <property name="does file exist? " expression="get-property('fileExists')"/>
-					</log>
-			<filter source="get-property('fileExists')" regex="true">
-                <then>
-					<file.read configKey="SFTP_CONNECTION">
-						<path>/SOURCE/BSS-PRODUCTS.csv</path>
-						<contentType>text/plain</contentType>
-						<includeResultTo>true</includeResultTo>
-						<resultPropertyName>csvContent</resultPropertyName>
-						<readMode>Complete File</readMode>
-						<startLineNum>0</startLineNum>
-						<endLineNum>0</endLineNum>
-						<lineNum>0</lineNum>
-						<encoding>UTF-8</encoding>
-						<enableStreaming>false</enableStreaming>
-						<enableLock>false</enableLock>
-					</file.read>
-                    <property name="newFileName" expression="fn:concat('/Target/bssproducts', get-property('SYSTEM_DATE', 'ddMMyyyy'), '.csv')" scope="default" type="STRING"/>
-                    <file.write configKey="SFTP_CONNECTION">
-                        <filePath>{get-property('newFileName')}</filePath>
-                        <contentOrExpression>{get-property('csvContent')}</contentOrExpression>
-                        <writeMode>OVERWRITE</writeMode>
-					</file.write>
-				</then>
-                <else>
-                    <log level="custom">
-                        <property name="message" value="BSS-PRODUCTS.csv.OK file does not exist. No action taken."/>
-					</log>
-				</else>
-			</filter>
+				<property name="message" value="BSS-PRODUCTS.csv.OK file does not exist. No action taken."/>
+			</log>
+		</else>
+	</filter>
 </sequence>
