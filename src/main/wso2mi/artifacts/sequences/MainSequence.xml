@@ -9,7 +9,7 @@
 		<property name="sftpurl12 " expression="get-property('URL')"/>
 	</log>
 	<file.checkExist configKey="SFTP_CONNECTION">
-		<path>/Choreo/BSS-PRODUCTS.csv.OK</path>
+		<path>/Source/BSS-PRODUCTS.csv.OK</path>
 		<includeResultTo>Message Property</includeResultTo>
 		<resultPropertyName>fileExists</resultPropertyName>
 	</file.checkExist>
@@ -19,7 +19,7 @@
 	<filter source="get-property('fileExists')" regex="true">
 		<then>
 			<file.read configKey="SFTP_CONNECTION">
-				<path>/Choreo/BSS-PRODUCTS.csv</path>
+				<path>/Source/BSS-PRODUCTS.csv</path>
 				<contentType>text/plain</contentType>
 				<includeResultTo>true</includeResultTo>
 				<resultPropertyName>csvContent</resultPropertyName>
