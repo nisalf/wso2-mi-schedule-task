@@ -14,5 +14,6 @@
   <strictHostKeyChecking>false</strictHostKeyChecking>
   <sftpConnectionTimeout>100000</sftpConnectionTimeout>
   <sftpSessionTimeout>150000</sftpSessionTimeout>
+  <workingDir>/</workingDir>
 </file.init>
     </localEntry>
