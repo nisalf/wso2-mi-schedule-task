@@ -19,7 +19,7 @@
 	<filter source="get-property('fileExists')" regex="true">
 		<then>
 			<file.read configKey="SFTP_CONNECTION">
-				<path>/SOURCE/BSS-PRODUCTS.csv</path>
+				<path>/Choreo/BSS-PRODUCTS.csv</path>
 				<contentType>text/plain</contentType>
 				<includeResultTo>true</includeResultTo>
 				<resultPropertyName>csvContent</resultPropertyName>
