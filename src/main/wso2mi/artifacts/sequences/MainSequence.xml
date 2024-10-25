@@ -3,7 +3,7 @@
 	<property expression="get-property('env', 'USER')" name="USER" scope="default" type="STRING"/>
 	<property expression="get-property('env', 'PASS')" name="PASS" scope="default" type="STRING"/>
 	<file.checkExist configKey="SFTP_CONNECTION">
-		<path>/Source1/BSS-PRODUCTS.csv.OK</path>
+		<path>/Source/BSS-PRODUCTS.csv.OK</path>
 		<includeResultTo>Message Property</includeResultTo>
 		<resultPropertyName>fileExists</resultPropertyName>
 	</file.checkExist>
