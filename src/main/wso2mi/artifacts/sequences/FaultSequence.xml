@@ -1,0 +1,8 @@
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="FaultSequence">
+    <log level="custom">
+        <property name="Error Code" expression="get-property('ERROR_CODE')"/>
+        <property name="Error Message" expression="get-property('ERROR_MESSAGE')"/>
+        <property name="Error Detail" expression="get-property('ERROR_DETAIL')"/>
+    </log>
+    <drop/>
+</sequence>
